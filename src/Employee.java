@@ -7,6 +7,7 @@ public class Employee {
 	public int yearService; //Years working 
 	public boolean workStatus; //Permanent [True] Temporary [False]
 	public int warnings; //Number of warnings given
+	public int seniorityLevel; // Seniority level variable
 	
 	public Employee(String fullName, double hSalary, int hWeekly, int years, boolean status, int warnings) {
 		eFullName = fullName;
@@ -81,8 +82,19 @@ public class Employee {
 	public int seniorityLevel() {
 		
 		//Add Code Here [You have to use If/Else to get graded]
-		
-		return 0;// Temporal Return
+		if (yearService >= 10){
+			seniorityLevel = 3;
+		}
+		else if (yearService >= 5){
+			seniorityLevel = 2;
+		}
+		else if (yearService >= 1){
+			seniorityLevel = 1;
+		}
+		else if (yearService < 1){
+			seniorityLevel = 0;
+		}
+		return seniorityLevel;// Temporal Return
 		
 	}
 }
