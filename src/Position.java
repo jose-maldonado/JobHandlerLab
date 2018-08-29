@@ -5,6 +5,8 @@ public class Position {
 	private double hSalary;//Position Salary
 	private boolean available;//Position Availability
 	private boolean jobType; //Full Time [True] Part Time [False];
+	double totalYearly; //Total Yearly Salary
+	double Hours; //Hours worked per week
 	
 	public Position(String pCode, int rank, double salary, boolean availability, boolean jobType) {
 		setPositionCode(pCode);
@@ -67,9 +69,16 @@ public class Position {
 	 */
 	public double getYearlySalary() {
 		
-		//Add Code Here [You have to use If/Else to get graded]
+		if (jobType){
+			 Hours = 40;
+		}
+		else {
+			 Hours = 20;
+		}
 		
-		return 0; //Temporal Return
+		totalYearly = hSalary*Hours*4.5*12;
+		
+		return totalYearly;// Temporal Return
 		
 	}
 }
