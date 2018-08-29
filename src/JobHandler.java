@@ -82,6 +82,32 @@ public class JobHandler {
 		
 		//Add Code Here [You have to use Switch and If/Else to get graded]
 		
+		switch(seniority){
+		case 1:
+			eRank += 5;
+			break;
+		case 2:
+			eRank += 10;
+			break;
+		case 3:
+			eRank += 20;
+			break;
+		default:
+			eRank += 0;
+			break;
+		}
+		if (eRank >= jobRank){
+			qualify = true;
+		}
+		else {
+			if (jobType == false){
+				qualify = true;
+			}
+			else {
+				qualify = false;
+			}
+		}
+		
 		return qualify; 
 	}
 }
